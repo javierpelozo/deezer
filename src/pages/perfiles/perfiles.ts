@@ -12,22 +12,30 @@ import { DeezerService } from '../../providers/deezer-service'
 })
 
 export class Perfiles {
+  public users: any;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public ds: DeezerService
     ) {
-
+      this.users = [];
   }
   
 
   //Nos lleva a la pagina de playlist
-  goToPlaylist(userID){
-    this.navCtrl.push(Playlists, { userID: userID });
+  goToPlaylist(user){
+    this.navCtrl.push(Playlists, { user: user });
   }
 
   ionViewDidLoad() {
-    this.ds.getProfilesId();
+
+    this.ds.getUsers().subscribe( usersIDs => {
+      usersIDs.map( userID => {
+        this.ds.getUserDetail(userID).subscribe( user => {
+          this.users.push(user);
+        });
+      });
+    });
   }
 }

@@ -10,24 +10,19 @@ export class DeezerService {
     this.deezerAPI = "/deezerAPI/";
   }
 
-  getProfilesId(){
-    this.http.get('https://api.myjson.com/bins/w076v')
+  getUsers(){
+    return this.http.get('https://api.myjson.com/bins/w076v')
     .map( res => res.json() )
-    .subscribe( users => {
-      console.log(users);
-
-      users.map( userID => {
-        this.getUserDetail(userID);
-      });
-    });
   }
 
   getUserDetail(userID){
-    this.http.get(this.deezerAPI + 'user/' + userID)
+    return this.http.get(this.deezerAPI + "user/" + userID)
     .map( res => res.json() )
-    .subscribe( data => {
-      console.log(data);
-    });
+  }
+
+  getUserPlaylists(userID){
+    return this.http.get(this.deezerAPI + "user/" + userID + "/playlists")
+    .map( res => res.json() )
   }
 
 }

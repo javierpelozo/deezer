@@ -5,6 +5,7 @@
   "typescript": true,
   "proxies": [{
     "path": "/deezerAPI",
-    "proxyUrl": "http://api.deezer.com/"
+    "proxyUrl": "http://ciudades.com.py/api/"
+    //"proxyUrl": "http://api.deezer.com/"
   }]
 }
