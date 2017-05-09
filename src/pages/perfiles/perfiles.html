@@ -5,14 +5,44 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Perfiles</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
+  <ion-list>
 
+    <ion-item (click)="goToPlaylist(1)">
+      <ion-avatar item-left>
+        <img src="">
+      </ion-avatar>
+      <h2>Usuario 1</h2>
+    </ion-item>
+
+    <ion-item (click)="goToPlaylist(2)">
+      <ion-avatar item-left>
+        <img src="">
+      </ion-avatar>
+      <h2>Usuario 2</h2>
+    </ion-item>
+
+    <ion-item (click)="goToPlaylist(3)">
+      <ion-avatar item-left>
+        <img src="">
+      </ion-avatar>
+      <h2>Usuario 3</h2>
+    </ion-item>
+
+    <ion-item (click)="goToPlaylist(4)">
+      <ion-avatar item-left>
+        <img src="">
+      </ion-avatar>
+      <h2>Usuario 4</h2>
+    </ion-item>
+
+  </ion-list>
 </ion-content>

@@ -5,14 +5,42 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Acerca</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
+  <h1>Ionic 2 - Acerca De</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde ratione, delectus sequi nam sint labore aliquid sunt harum atque quibusdam adipisci doloremque dignissimos optio qui, assumenda iure aperiam architecto quam!</p>
+
+  <ion-slides pager>
+    <ion-slide >
+      1
+    </ion-slide>
+    <ion-slide >
+      2
+    </ion-slide>
+    <ion-slide >
+      3
+    </ion-slide>
+  </ion-slides>
+
+<ion-grid>
+  <ion-row>
+    <button ion-button icon-left full color="primary">
+      <ion-icon name="logo-facebook"></ion-icon>
+      Facebook
+    </button>
+    <button ion-button icon-left full color="danger">
+      <ion-icon name="logo-youtube"></ion-icon>
+      YouTube
+    </button>
+  </ion-row>
+</ion-grid>
 
 </ion-content>
