@@ -6,6 +6,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { InicioPage } from '../pages/inicio/inicio';
+import { Perfiles } from '../pages/perfiles/perfiles';
+import { Acerca } from '../pages/acerca/acerca';
+import { Contacto } from '../pages/contacto/contacto';
 
 @NgModule({
   declarations: [

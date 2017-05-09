@@ -1,22 +1,39 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { InicioPage } from '../pages/inicio/inicio';
+import { Perfiles } from '../pages/perfiles/perfiles';
+import { Contacto } from '../pages/contacto/contacto';
+import { Acerca } from '../pages/acerca/acerca';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = InicioPage;
+  @ViewChild('NAV') nav: Nav;
+  public rootPage: any;
+  public pages: Array<{ titulo: string, component: any, icon: string}>;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+    this.rootPage = InicioPage;
+    this.pages = [
+      { titulo: 'Inicio',           component: InicioPage, icon: 'home' },
+      { titulo: 'Perfiles Deezer',  component: Perfiles, icon: 'person' },
+      { titulo: 'Contacto',         component: Contacto, icon: 'mail' },
+      { titulo: 'Acerca De',        component: Acerca, icon: 'information-circle' },
+    ] ;
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
     });
+  }
+
+  goToPage(page){
+    this.nav.setRoot(page);
   }
 }
 
